@@ -8,11 +8,7 @@
 
 **You may refer to the [node-virustotal](https://www.npmjs.com/package/node-virustotal) docs for integrating virustotal into your node app.**
 
-<br/>
-
 **To create an app instance on discord, you may refer to this guide [discord-bot-in-node-js-for-beginners](https://buddy.works/tutorials/how-to-build-a-discord-bot-in-node-js-for-beginners)**
-
-<br/>
 
 **To host the bot locally or on heroku, follow this link:**
 
