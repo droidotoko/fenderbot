@@ -14,28 +14,30 @@ const checkLink = () => {
     );
     checkDictionary(result, msg);
     if (result) {
-      const hashed = nvt.sha256(result[0]);
-      defaultTimedInstance.urlLookup(hashed, function (err, res) {
-        if (err) {
-          clientConfig.user.setActivity(">/help");
-          return;
-        }
-        const responseList =
-          JSON.parse(res).data.attributes.last_analysis_results;
-
-        Object.entries(responseList).forEach(async ([key, val]) => {
-          // the name of the current key.
-          if (
-            val.result === "malicious" ||
-            val.result === "suspicious" ||
-            val.result === "malware" ||
-            val.result === "phishing" ||
-            val.result === "spam"
-          ) {
-            deleteMessage(msg);
+      result.map((link) => {
+        const hashed = nvt.sha256(link);
+        defaultTimedInstance.urlLookup(hashed, function (err, res) {
+          if (err) {
+            clientConfig.user.setActivity(">/help");
+            return;
           }
+          const responseList =
+            JSON.parse(res).data.attributes.last_analysis_results;
+
+          Object.entries(responseList).forEach(async ([key, val]) => {
+            // the name of the current key.
+            if (
+              val.result === "malicious" ||
+              val.result === "suspicious" ||
+              val.result === "malware" ||
+              val.result === "phishing" ||
+              val.result === "spam"
+            ) {
+              deleteMessage(msg);
+            }
+          });
+          return;
         });
-        return;
       });
     }
   });

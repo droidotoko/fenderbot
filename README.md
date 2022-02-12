@@ -1,6 +1,6 @@
 ## Lights OFF
 
-### Fender Bot is an improved version of the [No Fishing](https://github.com/rishabhAjay/noFishing) bot that scans for Malware or Virus links along with phishing and removes them from your server.\*\*
+### Fender Bot is an improved version of the [No Fishing](https://github.com/rishabhAjay/noFishing) bot that scans for Malware or Virus links along with phishing and removes them from your server.
 
 **Credits to [This Repo](https://github.com/nikolaischunk/discord-phishing-links/blob/main/domain-list.json) for creating a comprehensive phishing domain dictionary.**
 
