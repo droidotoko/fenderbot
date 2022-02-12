@@ -1,4 +1,4 @@
-## Lights OFF
+## Fender Bot
 
 ### Fender Bot is an improved version of the [No Fishing](https://github.com/rishabhAjay/noFishing) bot that scans for Malware or Virus links along with phishing and removes them from your server.
 
@@ -10,7 +10,5 @@
 
 **To create an app instance on discord, you may refer to this guide [discord-bot-in-node-js-for-beginners](https://buddy.works/tutorials/how-to-build-a-discord-bot-in-node-js-for-beginners)**
 
-**To host the bot locally or on heroku, follow this link:**
-
-[Lights Off readme](https://github.com/rishabhAjay/lightsoff#readme)
+**To host the bot locally or on heroku, follow this link: [Lights Off readme](https://github.com/rishabhAjay/lightsoff#readme)**
 _(YOU DON'T HAVE TO CONFIGURE PUPPETEER FOR THIS PROJECT)_
