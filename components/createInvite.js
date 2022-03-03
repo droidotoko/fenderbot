@@ -23,7 +23,7 @@ const createInvite = () => {
             "The bot does not have permissions. Give it the Administrator permission"
           );
         } catch (error) {
-          return clientConfig.user.setActivity(";/help");
+          return clientConfig.user.setActivity(">/help");
         }
       }
     }
