@@ -10,5 +10,5 @@
 
 **To create an app instance on discord, you may refer to this guide [discord-bot-in-node-js-for-beginners](https://buddy.works/tutorials/how-to-build-a-discord-bot-in-node-js-for-beginners)**
 
-**To host the bot locally or on heroku, follow this link: [Lights Off readme](https://github.com/rishabhAjay/lightsoff#readme)**
+**To host the bot locally or on heroku, follow this link: [Lights Off readme](https://github.com/rishabhAjay/lights-off#readme)**
 _(YOU DON'T HAVE TO CONFIGURE PUPPETEER FOR THIS PROJECT)_
