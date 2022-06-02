@@ -9,14 +9,10 @@ const checkDictionary = async (result, msg) => {
     result.map(async (ele) => {
       try {
         let urls = await uu.expand(ele);
-        urls = urls ? urls : "nothing";
-
+        urls = urls ? new URL(urls).hostname.replace("www.", "") : "";
+        ele = new URL(ele).hostname.replace("www.", "");
         domainsList.map(async (ele2) => {
-          if (
-            (urls.includes(ele2) && msg.content.includes(ele) && ele2 !== "ord.gg") ||
-            msg.content.includes(ele2) && ele2 !== "ord.gg"
-          ) {
-            console.log(ele2);
+          if (urls === ele2 || ele === ele2) {
             deleteMessage(msg);
           }
         });
