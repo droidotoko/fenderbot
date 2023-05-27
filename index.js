@@ -4,8 +4,10 @@ import createInvite from "./components/createInvite.js";
 import help from "./components/help.js";
 import cron from "node-cron";
 import http from "http";
+import express from "express";
 dotenv.config(); //initialize dotenv
-
+const app = express();
+app.use(express.json());
 import clientConfig from "./config/clientConfig.js";
 scanLink();
 createInvite();
@@ -19,13 +21,21 @@ clientConfig.on("ready", () => {
 
 const port = process.env.PORT || 3000;
 
-const requestHandler = (request, response) => {
-  response.end("Hello Node.js Server!");
-};
+app.get("/health", (request, response) => {
+  const healthcheck = {
+    uptime: process.uptime(),
+    message: "OK",
+    timestamp: Date.now(),
+  };
+  try {
+    response.status(200).send(healthcheck);
+  } catch (error) {
+    healthcheck.message = error;
+    response.status(503).send({ error });
+  }
+});
 
-const server = http.createServer(requestHandler);
-
-server.listen(port, (err) => {
+app.listen(port, (err) => {
   if (err) {
     return console.log("something bad happened", err);
   }
